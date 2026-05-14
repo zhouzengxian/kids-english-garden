@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids English Garden</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Kids English Garden</div>
+        <div class="loading-subtext">Planting English flowers...</div>
+    </div>
+
+    <!-- Three.js Canvas Container -->
+    <div id="canvas-container"></div>
+
+    <!-- Top Control Bar -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <div class="garden-logo"><span>🌈</span> Kids English <span>Garden</span></div>
+            <div class="category-filters" id="categoryFilters">
+                <!-- Dynamically generated -->
+            </div>
+        </div>
+        <div class="top-bar-right">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search-input" id="searchInput" placeholder="Search words...">
+            </div>
+            <div class="view-toggle">
+                <button class="view-btn active" data-view="flowers" title="Flowers View">🌺</button>
+                <button class="view-btn" data-view="plants" title="Plants View">🌿</button>
+                <button class="view-btn" data-view="mixed" title="Mixed View">🌸</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Stats -->
+    <div class="bottom-stats" id="bottomStats">
+        <div class="stat-item">
+            🌺 <span class="stat-number" id="flowerCount">0</span> Flowers
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            📚 <span class="stat-number" id="topicCount">0</span> Words
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            🏠 <span class="stat-number" id="categoryCount">0</span> Categories
+        </div>
+    </div>
+
+    <!-- Right Side Vocabulary List Toggle Button -->
+    <button class="vocab-list-toggle" id="vocabListToggle" title="View all words">
+        📖 Words
+    </button>
+
+    <!-- Vocabulary List Panel -->
+    <div class="vocab-list-panel" id="vocabListPanel">
+        <div class="vocab-panel-header">
+            <h2>📚 Yiyi's Words (<span id="totalWordCount">0</span>)</h2>
+            <button class="vocab-panel-close" id="vocabListClose">✕</button>
+        </div>
+        <div class="vocab-list-content" id="vocabListContent">
+            <!-- Dynamically generated -->
+        </div>
+    </div>
+
+    <!-- Word Card (Fixed Position Panel) -->
+    <div class="word-card" id="wordCard">
+        <div style="padding: 18px;">
+            <div class="card-category-tag" id="cardCategory"></div>
+            <div class="card-word" id="cardWord"></div>
+            <div class="card-meaning" id="cardMeaning"></div>
+            <div class="card-divider"></div>
+            <div class="card-hint" id="cardHint">Explore more flowers in this garden!</div>
+        </div>
+    </div>
+
+    <!-- Hint Overlay -->
+    <div class="hint-overlay" id="hintOverlay">🖱 Drag to rotate · Scroll to zoom · Hover to preview · Click to hear pronunciation</div>
+
+    <!-- Three.js (local UMD files - works with file:// protocol) -->
+    <script src="three.min.js"></script>
+    <script src="OrbitControls.js"></script>
+
+    <!-- Core Engine -->
+    <script src="garden-3d.js"></script>
+</body>
+</html>
